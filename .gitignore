@@ -61,3 +61,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/Haptics Glove JAVA API/nbproject/private/
+/Haptics Glove JAVA API/build/
+/Haptics Glove JAVA API/dist/
