@@ -32,20 +32,20 @@ public class ObjectFactory {
     private final static QName _ArrayOfGlove_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "ArrayOfGlove");
     private final static QName _GloveConfigurationProfile_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Glove.Configuration.Profile");
     private final static QName _Glove_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Glove");
-    private final static QName _GloveConfigurationProfileMappings_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Mappings");
-    private final static QName _GloveConfigurationProfileGloveHash_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveHash");
-    private final static QName _GloveConfigurationProfileProfileName_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "ProfileName");
-    private final static QName _GlovePort_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Port");
-    private final static QName _GloveBluetoothAddress_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "BluetoothAddress");
-    private final static QName _GloveName_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Name");
-    private final static QName _GloveGloveConfiguration_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveConfiguration");
     private final static QName _GloveConfigurationAllowedBaudRates_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "AllowedBaudRates");
     private final static QName _GloveConfigurationPositivePins_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "PositivePins");
     private final static QName _GloveConfigurationGloveProfile_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveProfile");
     private final static QName _GloveConfigurationNegativePins_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "NegativePins");
     private final static QName _GloveConfigurationNegativeInit_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "NegativeInit");
+    private final static QName _GloveConfigurationGloveHash_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveHash");
     private final static QName _GloveConfigurationPositiveInit_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "PositiveInit");
     private final static QName _GloveConfigurationGloveName_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveName");
+    private final static QName _GloveConfigurationProfileMappings_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Mappings");
+    private final static QName _GloveConfigurationProfileProfileName_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "ProfileName");
+    private final static QName _GlovePort_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Port");
+    private final static QName _GloveBluetoothAddress_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "BluetoothAddress");
+    private final static QName _GloveName_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "Name");
+    private final static QName _GloveGloveConfiguration_QNAME = new QName("http://schemas.datacontract.org/2004/07/OpenGloveWCF", "GloveConfiguration");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.datacontract.schemas._2004._07.openglovewcf
@@ -132,69 +132,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfKeyValueOfstringstring }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Mappings", scope = GloveConfigurationProfile.class)
-    public JAXBElement<ArrayOfKeyValueOfstringstring> createGloveConfigurationProfileMappings(ArrayOfKeyValueOfstringstring value) {
-        return new JAXBElement<ArrayOfKeyValueOfstringstring>(_GloveConfigurationProfileMappings_QNAME, ArrayOfKeyValueOfstringstring.class, GloveConfigurationProfile.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveHash", scope = GloveConfigurationProfile.class)
-    public JAXBElement<String> createGloveConfigurationProfileGloveHash(String value) {
-        return new JAXBElement<String>(_GloveConfigurationProfileGloveHash_QNAME, String.class, GloveConfigurationProfile.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "ProfileName", scope = GloveConfigurationProfile.class)
-    public JAXBElement<String> createGloveConfigurationProfileProfileName(String value) {
-        return new JAXBElement<String>(_GloveConfigurationProfileProfileName_QNAME, String.class, GloveConfigurationProfile.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Port", scope = Glove.class)
-    public JAXBElement<String> createGlovePort(String value) {
-        return new JAXBElement<String>(_GlovePort_QNAME, String.class, Glove.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "BluetoothAddress", scope = Glove.class)
-    public JAXBElement<String> createGloveBluetoothAddress(String value) {
-        return new JAXBElement<String>(_GloveBluetoothAddress_QNAME, String.class, Glove.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Name", scope = Glove.class)
-    public JAXBElement<String> createGloveName(String value) {
-        return new JAXBElement<String>(_GloveName_QNAME, String.class, Glove.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GloveConfiguration }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveConfiguration", scope = Glove.class)
-    public JAXBElement<GloveConfiguration> createGloveGloveConfiguration(GloveConfiguration value) {
-        return new JAXBElement<GloveConfiguration>(_GloveGloveConfiguration_QNAME, GloveConfiguration.class, Glove.class, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfint }{@code >}}
      * 
      */
@@ -245,7 +182,7 @@ public class ObjectFactory {
      */
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveHash", scope = GloveConfiguration.class)
     public JAXBElement<String> createGloveConfigurationGloveHash(String value) {
-        return new JAXBElement<String>(_GloveConfigurationProfileGloveHash_QNAME, String.class, GloveConfiguration.class, value);
+        return new JAXBElement<String>(_GloveConfigurationGloveHash_QNAME, String.class, GloveConfiguration.class, value);
     }
 
     /**
@@ -264,6 +201,69 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveName", scope = GloveConfiguration.class)
     public JAXBElement<String> createGloveConfigurationGloveName(String value) {
         return new JAXBElement<String>(_GloveConfigurationGloveName_QNAME, String.class, GloveConfiguration.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfKeyValueOfstringstring }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Mappings", scope = GloveConfigurationProfile.class)
+    public JAXBElement<ArrayOfKeyValueOfstringstring> createGloveConfigurationProfileMappings(ArrayOfKeyValueOfstringstring value) {
+        return new JAXBElement<ArrayOfKeyValueOfstringstring>(_GloveConfigurationProfileMappings_QNAME, ArrayOfKeyValueOfstringstring.class, GloveConfigurationProfile.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveHash", scope = GloveConfigurationProfile.class)
+    public JAXBElement<String> createGloveConfigurationProfileGloveHash(String value) {
+        return new JAXBElement<String>(_GloveConfigurationGloveHash_QNAME, String.class, GloveConfigurationProfile.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "ProfileName", scope = GloveConfigurationProfile.class)
+    public JAXBElement<String> createGloveConfigurationProfileProfileName(String value) {
+        return new JAXBElement<String>(_GloveConfigurationProfileProfileName_QNAME, String.class, GloveConfigurationProfile.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Port", scope = Glove.class)
+    public JAXBElement<String> createGlovePort(String value) {
+        return new JAXBElement<String>(_GlovePort_QNAME, String.class, Glove.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "BluetoothAddress", scope = Glove.class)
+    public JAXBElement<String> createGloveBluetoothAddress(String value) {
+        return new JAXBElement<String>(_GloveBluetoothAddress_QNAME, String.class, Glove.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "Name", scope = Glove.class)
+    public JAXBElement<String> createGloveName(String value) {
+        return new JAXBElement<String>(_GloveName_QNAME, String.class, Glove.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GloveConfiguration }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://schemas.datacontract.org/2004/07/OpenGloveWCF", name = "GloveConfiguration", scope = Glove.class)
+    public JAXBElement<GloveConfiguration> createGloveGloveConfiguration(GloveConfiguration value) {
+        return new JAXBElement<GloveConfiguration>(_GloveGloveConfiguration_QNAME, GloveConfiguration.class, Glove.class, value);
     }
 
 }

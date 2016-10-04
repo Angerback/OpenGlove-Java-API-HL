@@ -29,10 +29,14 @@ public class OpenGloveServiceTest {
             System.out.println("GLOVE: " + glove.getName().getValue() + " | " + glove.getPort().getValue() + " | " + glove.getBluetoothAddress().getValue());
             if (glove.isConnected()) {
                 List<ArrayOfKeyValueOfstringstring.KeyValueOfstringstring> mappings = glove.getGloveConfiguration().getValue().getGloveProfile().getValue().getMappings().getValue().getKeyValueOfstringstring();
-                for (ArrayOfKeyValueOfstringstring.KeyValueOfstringstring item : mappings) {
-                    api.Activate(glove, Integer.parseInt(item.getKey()), 250);  
+                for (int i = 0; i < 256; i++) {
+                    for (ArrayOfKeyValueOfstringstring.KeyValueOfstringstring item : mappings) {
+                        System.out.println("" + i);
+                        api.Activate(glove, Integer.parseInt(item.getKey()), i);  
+                    }
+                    Thread.sleep(200);
                 }
-                Thread.sleep(4000);
+                
                 for (ArrayOfKeyValueOfstringstring.KeyValueOfstringstring item : mappings) {
                     api.Activate(glove, Integer.parseInt(item.getKey()), 0);  
                 }
