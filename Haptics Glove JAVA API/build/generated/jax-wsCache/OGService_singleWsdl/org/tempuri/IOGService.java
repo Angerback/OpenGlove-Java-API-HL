@@ -8,6 +8,7 @@ import javax.jws.WebService;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.ws.RequestWrapper;
 import javax.xml.ws.ResponseWrapper;
+import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfint;
 import org.datacontract.schemas._2004._07.openglovewcf.ArrayOfGlove;
 import org.datacontract.schemas._2004._07.openglovewcf.Glove;
 
@@ -108,5 +109,25 @@ public interface IOGService {
     public Integer disconnect(
         @WebParam(name = "gloveAddress", targetNamespace = "http://tempuri.org/")
         String gloveAddress);
+
+    /**
+     * 
+     * @param actuators
+     * @param gloveAddress
+     * @param intensityList
+     * @return
+     *     returns java.lang.Integer
+     */
+    @WebMethod(operationName = "ActivateMany", action = "http://tempuri.org/IOGService/ActivateMany")
+    @WebResult(name = "ActivateManyResult", targetNamespace = "http://tempuri.org/")
+    @RequestWrapper(localName = "ActivateMany", targetNamespace = "http://tempuri.org/", className = "org.tempuri.ActivateMany")
+    @ResponseWrapper(localName = "ActivateManyResponse", targetNamespace = "http://tempuri.org/", className = "org.tempuri.ActivateManyResponse")
+    public Integer activateMany(
+        @WebParam(name = "gloveAddress", targetNamespace = "http://tempuri.org/")
+        String gloveAddress,
+        @WebParam(name = "actuators", targetNamespace = "http://tempuri.org/")
+        ArrayOfint actuators,
+        @WebParam(name = "intensityList", targetNamespace = "http://tempuri.org/")
+        ArrayOfint intensityList);
 
 }

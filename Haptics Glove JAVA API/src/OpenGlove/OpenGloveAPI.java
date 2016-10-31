@@ -8,6 +8,8 @@ package OpenGlove;
 
 import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfKeyValueOfstringstring;
 import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfKeyValueOfstringstring.KeyValueOfstringstring;
+import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfint;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import javafx.animation.KeyValue;
@@ -56,6 +58,32 @@ public class OpenGloveAPI {
             return;
         }
         this.serviceClient.activate(selectedGlove.getBluetoothAddress().getValue(), actuator, intensity);
+    }
+    
+    public void Activate(Glove selectedGlove, List<Integer> regions, List<Integer> intensityList) {
+        ArrayOfint actuators = new ArrayOfint();
+        
+        for (Integer region : regions) {
+            int actuator = -1;
+            List<KeyValueOfstringstring> mappings = selectedGlove.getGloveConfiguration().getValue().getGloveProfile().getValue().getMappings().getValue().getKeyValueOfstringstring();
+            for (KeyValueOfstringstring item : mappings) {
+                if (item.getKey().equals(region.toString())) {
+                    actuator = Integer.parseInt(item.getValue());
+                    break;
+                }
+            }
+            if (actuator == -1) {
+                return;
+            }
+            actuators.getInt().add(actuator);
+        }
+        
+        ArrayOfint intensityListAOI = new ArrayOfint();
+        for (Integer intensity: intensityList) {
+            intensityListAOI.getInt().add(intensity);
+        }
+        
+        this.serviceClient.activateMany(selectedGlove.getBluetoothAddress().getValue(), actuators, intensityListAOI);
     }
 
     public enum HandRegion {

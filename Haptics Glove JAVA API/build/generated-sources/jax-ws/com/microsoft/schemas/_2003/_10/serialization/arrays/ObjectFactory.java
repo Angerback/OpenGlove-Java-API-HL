@@ -44,19 +44,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ArrayOfstring }
-     * 
-     */
-    public ArrayOfstring createArrayOfstring() {
-        return new ArrayOfstring();
-    }
-
-    /**
      * Create an instance of {@link ArrayOfint }
      * 
      */
     public ArrayOfint createArrayOfint() {
         return new ArrayOfint();
+    }
+
+    /**
+     * Create an instance of {@link ArrayOfstring }
+     * 
+     */
+    public ArrayOfstring createArrayOfstring() {
+        return new ArrayOfstring();
     }
 
     /**

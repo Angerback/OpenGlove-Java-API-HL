@@ -5,6 +5,7 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
+import com.microsoft.schemas._2003._10.serialization.arrays.ArrayOfint;
 import org.datacontract.schemas._2004._07.openglovewcf.ArrayOfGlove;
 import org.datacontract.schemas._2004._07.openglovewcf.Glove;
 
@@ -27,8 +28,10 @@ import org.datacontract.schemas._2004._07.openglovewcf.Glove;
 public class ObjectFactory {
 
     private final static QName _ConnectGloveAddress_QNAME = new QName("http://tempuri.org/", "gloveAddress");
-    private final static QName _GetGlovesResponseGetGlovesResult_QNAME = new QName("http://tempuri.org/", "GetGlovesResult");
+    private final static QName _ActivateManyActuators_QNAME = new QName("http://tempuri.org/", "actuators");
+    private final static QName _ActivateManyIntensityList_QNAME = new QName("http://tempuri.org/", "intensityList");
     private final static QName _SaveGloveGlove_QNAME = new QName("http://tempuri.org/", "glove");
+    private final static QName _GetGlovesResponseGetGlovesResult_QNAME = new QName("http://tempuri.org/", "GetGlovesResult");
     private final static QName _RefreshGlovesResponseRefreshGlovesResult_QNAME = new QName("http://tempuri.org/", "RefreshGlovesResult");
 
     /**
@@ -47,27 +50,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RefreshGlovesResponse }
+     * Create an instance of {@link ActivateMany }
      * 
      */
-    public RefreshGlovesResponse createRefreshGlovesResponse() {
-        return new RefreshGlovesResponse();
-    }
-
-    /**
-     * Create an instance of {@link Disconnect }
-     * 
-     */
-    public Disconnect createDisconnect() {
-        return new Disconnect();
-    }
-
-    /**
-     * Create an instance of {@link DisconnectResponse }
-     * 
-     */
-    public DisconnectResponse createDisconnectResponse() {
-        return new DisconnectResponse();
+    public ActivateMany createActivateMany() {
+        return new ActivateMany();
     }
 
     /**
@@ -79,27 +66,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Activate }
-     * 
-     */
-    public Activate createActivate() {
-        return new Activate();
-    }
-
-    /**
      * Create an instance of {@link ConnectResponse }
      * 
      */
     public ConnectResponse createConnectResponse() {
         return new ConnectResponse();
-    }
-
-    /**
-     * Create an instance of {@link ActivateResponse }
-     * 
-     */
-    public ActivateResponse createActivateResponse() {
-        return new ActivateResponse();
     }
 
     /**
@@ -135,6 +106,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RefreshGlovesResponse }
+     * 
+     */
+    public RefreshGlovesResponse createRefreshGlovesResponse() {
+        return new RefreshGlovesResponse();
+    }
+
+    /**
+     * Create an instance of {@link ActivateManyResponse }
+     * 
+     */
+    public ActivateManyResponse createActivateManyResponse() {
+        return new ActivateManyResponse();
+    }
+
+    /**
+     * Create an instance of {@link Disconnect }
+     * 
+     */
+    public Disconnect createDisconnect() {
+        return new Disconnect();
+    }
+
+    /**
+     * Create an instance of {@link DisconnectResponse }
+     * 
+     */
+    public DisconnectResponse createDisconnectResponse() {
+        return new DisconnectResponse();
+    }
+
+    /**
+     * Create an instance of {@link Activate }
+     * 
+     */
+    public Activate createActivate() {
+        return new Activate();
+    }
+
+    /**
+     * Create an instance of {@link ActivateResponse }
+     * 
+     */
+    public ActivateResponse createActivateResponse() {
+        return new ActivateResponse();
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
@@ -144,12 +163,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfGlove }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "GetGlovesResult", scope = GetGlovesResponse.class)
-    public JAXBElement<ArrayOfGlove> createGetGlovesResponseGetGlovesResult(ArrayOfGlove value) {
-        return new JAXBElement<ArrayOfGlove>(_GetGlovesResponseGetGlovesResult_QNAME, ArrayOfGlove.class, GetGlovesResponse.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "gloveAddress", scope = Activate.class)
+    public JAXBElement<String> createActivateGloveAddress(String value) {
+        return new JAXBElement<String>(_ConnectGloveAddress_QNAME, String.class, Activate.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfint }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "actuators", scope = ActivateMany.class)
+    public JAXBElement<ArrayOfint> createActivateManyActuators(ArrayOfint value) {
+        return new JAXBElement<ArrayOfint>(_ActivateManyActuators_QNAME, ArrayOfint.class, ActivateMany.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "gloveAddress", scope = ActivateMany.class)
+    public JAXBElement<String> createActivateManyGloveAddress(String value) {
+        return new JAXBElement<String>(_ConnectGloveAddress_QNAME, String.class, ActivateMany.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfint }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "intensityList", scope = ActivateMany.class)
+    public JAXBElement<ArrayOfint> createActivateManyIntensityList(ArrayOfint value) {
+        return new JAXBElement<ArrayOfint>(_ActivateManyIntensityList_QNAME, ArrayOfint.class, ActivateMany.class, value);
     }
 
     /**
@@ -165,18 +211,18 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "gloveAddress", scope = Activate.class)
-    public JAXBElement<String> createActivateGloveAddress(String value) {
-        return new JAXBElement<String>(_ConnectGloveAddress_QNAME, String.class, Activate.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
     @XmlElementDecl(namespace = "http://tempuri.org/", name = "gloveAddress", scope = Disconnect.class)
     public JAXBElement<String> createDisconnectGloveAddress(String value) {
         return new JAXBElement<String>(_ConnectGloveAddress_QNAME, String.class, Disconnect.class, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ArrayOfGlove }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "GetGlovesResult", scope = GetGlovesResponse.class)
+    public JAXBElement<ArrayOfGlove> createGetGlovesResponseGetGlovesResult(ArrayOfGlove value) {
+        return new JAXBElement<ArrayOfGlove>(_GetGlovesResponseGetGlovesResult_QNAME, ArrayOfGlove.class, GetGlovesResponse.class, value);
     }
 
     /**
